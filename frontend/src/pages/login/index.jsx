@@ -25,7 +25,7 @@ function LoginComponent() {
     if(authState.loggedIn) {
       router.push("/dashboard")
     }
-  }, [authState.loggedIn, router])
+  }, [authState.loggedIn])
 
   useEffect(() => {
     if(localStorage.getItem("token")) {
@@ -39,15 +39,7 @@ function LoginComponent() {
 
   const handleRegister = () => {
     console.log("Registering...");
-    dispath(registerUser({ username, password, email, name })).then(() => {
-      // Clear form fields after registration
-      setUsername("");
-      setName("");
-      setEmailAddress("");
-      setPassword("");
-      // Switch to login mode
-      setUserLoginMethod(true);
-    })
+    dispath(registerUser({ username, password, email, name }))
   }
 
 const handleLogin = () => {
@@ -68,7 +60,7 @@ const handleLogin = () => {
           <div className={styles.cardContainer_left}>
             <p className={styles.cardleft_heading}> {userLoginMethod ? "Sign In" : "Sign Up"} </p>
 
-            {authState.message && <p style={{color: authState.isError ? "red" : "green"}}> {authState.message?.message || authState.message} </p>}
+            <p style={{color: authState.isError ? "red" : "green"}}> {authState.message.message} </p>
 
               <div className={styles.inputContainers}>
 
