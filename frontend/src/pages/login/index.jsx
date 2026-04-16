@@ -60,7 +60,7 @@ const handleLogin = () => {
           <div className={styles.cardContainer_left}>
             <p className={styles.cardleft_heading}> {userLoginMethod ? "Sign In" : "Sign Up"} </p>
 
-            <p style={{color: authState.isError ? "red" : "green"}}> {" "} {authState.message.message} </p>
+            <p style={{color: authState.isError ? "red" : "green"}}> {authState.message.message} </p>
 
               <div className={styles.inputContainers}>
 
