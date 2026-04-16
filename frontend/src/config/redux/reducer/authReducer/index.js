@@ -56,6 +56,7 @@ const authSlice = createSlice({
             state.isError = false;
             state.isSuccess = true;
             state.loggedIn = true;
+            state.isTokenThere = true;
             state.message = "Login is Successfull!"
         })
         .addCase(loginUser.rejected, (state, action) => {

@@ -25,7 +25,7 @@ function LoginComponent() {
     if(authState.loggedIn) {
       router.push("/dashboard")
     }
-  }, [authState.loggedIn])
+  }, [authState.loggedIn, router])
 
   useEffect(() => {
     if(localStorage.getItem("token")) {
@@ -39,7 +39,15 @@ function LoginComponent() {
 
   const handleRegister = () => {
     console.log("Registering...");
-    dispath(registerUser({ username, password, email, name }))
+    dispath(registerUser({ username, password, email, name })).then(() => {
+      // Clear form fields after registration
+      setUsername("");
+      setName("");
+      setEmailAddress("");
+      setPassword("");
+      // Switch to login mode
+      setUserLoginMethod(true);
+    })
   }
 
 const handleLogin = () => {

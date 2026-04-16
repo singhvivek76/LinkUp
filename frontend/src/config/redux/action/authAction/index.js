@@ -8,27 +8,31 @@ export const loginUser = createAsyncThunk(
     async(user, thunkAPI) => {
 
         try {
+            console.log("Attempting login with:", user.email);
 
             const response = await clientServer.post('/login', {
                 "email": user.email,
                 "password": user.password
             });
 
+            console.log("Login response:", response.data);
+
             if(response.data.token) {
+                console.log("Token received, saving to localStorage");
                 localStorage.setItem("token", response.data.token)
+                return thunkAPI.fulfillWithValue(response.data.token);
             }
             else {
+                console.error("No token in response");
                 return thunkAPI.rejectWithValue({
                     message: "Token not provided!"
                 })
             }
 
-            return thunkAPI.fulfillWithValue(response.data.token);
-            
-
         }
         catch(error) {
-            return thunkAPI.rejectWithValue(error.response.data)
+            console.error("Login error:", error);
+            return thunkAPI.rejectWithValue(error.response?.data || { message: error.message })
         }
 
     }
