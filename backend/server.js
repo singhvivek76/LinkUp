@@ -34,18 +34,25 @@ const start = async () => {
         serverSelectionTimeoutMS: 15000
     });
 
+    console.log('Database connected');
+
     app.listen(9080, () => {
         console.log('Server is running on port 9080');
     });
 
 }
 
-start().catch((error) => {
-    console.error('Failed to start server:', error.message);
+// Only start server if running locally
+if (process.env.NODE_ENV !== 'production') {
+    start().catch((error) => {
+        console.error('Failed to start server:', error.message);
 
-    if (String(error.message).includes('querySrv ETIMEOUT')) {
-        console.error('MongoDB SRV DNS lookup timed out. Try using a non-SRV URI (mongodb://...) or fix DNS/network.');
-    }
+        if (String(error.message).includes('querySrv ETIMEOUT')) {
+            console.error('MongoDB SRV DNS lookup timed out. Try using a non-SRV URI (mongodb://...) or fix DNS/network.');
+        }
 
-    process.exit(1);
-});
+        process.exit(1);
+    });
+}
+
+export default app;
