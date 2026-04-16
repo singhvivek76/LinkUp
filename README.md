@@ -49,7 +49,6 @@ LinkUp/
 |   `-- node_modules/
 |       `-- backend dependencies
 `-- frontend/
-    |-- README.md
     |-- AGENTS.md
     |-- CLAUDE.md
     |-- eslint.config.mjs
@@ -58,12 +57,6 @@ LinkUp/
     |-- package.json
     |-- package-lock.json
     |-- public/
-    |   |-- favicon.ico
-    |   |-- file.svg
-    |   |-- globe.svg
-    |   |-- next.svg
-    |   |-- vercel.svg
-    |   |-- window.svg
     |   `-- images/
     |       `-- default.jpg
     `-- src/
