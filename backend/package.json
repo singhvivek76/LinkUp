@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prod":"node server.js"
+    "prod": "node server.js"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
@@ -20,7 +20,7 @@
     "mongoose": "^9.3.3",
     "multer": "^2.1.1",
     "nodemon": "^3.1.14",
-    "pdf-creator-node": "^2.3.5",
+    "pdf-creator-node": "^4.0.1",
     "pdfkit": "^0.18.0"
   }
 }
