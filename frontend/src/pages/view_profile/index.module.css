@@ -1,0 +1,140 @@
+.container {
+    padding: 1.3rem;
+    background: rgb(255, 253, 253);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.backDropContainer {
+    width: 100%;
+    height: 30vh;
+    background: url("https://images.pexels.com/photos/3684512/pexels-photo-3684512.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 20px;
+}
+
+.backDropContainer img {
+    width: 10em;
+    height: 10em;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -30%;
+    left: 8%;
+    text-align: center;
+}
+
+.profileContainer_details {
+    padding-top: 6.6rem;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+}
+
+.card_profileContainer {
+    display: flex;
+}
+
+.card_profileContainer > img {
+    width: 3.4rem;
+    height: auto;
+    height: 3.4rem;
+    object-fit: cover;
+}
+
+.connectBtn {
+    padding-inline: 0.8rem;
+    padding-block: 0.3rem;
+    outline: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background: rgba(3, 93, 183, 0.905);
+    border-radius: 10px;
+}
+
+.connectedButton {
+    padding-inline: 0.8rem;
+    padding-block: 0.3rem;
+    border: 1px solid silver;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.workHistoryContainer {
+    display: flex;
+    gap: 1.4rem;
+    padding-top: 1.4rem;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.workHistoryCard {
+    min-width: fit-content;
+    padding-inline: 2.5rem;
+    padding-block: 1rem;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15x rgb(173, 173, 173);
+}
+
+.profileContainer__flex {
+    display: flex;
+    gap: 0.7rem;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.profileContainer__flex > div:first-child {
+    flex: 0 0 80%;
+    min-width: 0;
+}
+
+.profileContainer__flex > div:last-child {
+    flex: 0 0 20%;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.workHistory {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.postCard {
+    padding: 0.8rem;
+    border-radius: 8px;
+    background: white;
+    margin-bottom: 0.8rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (max-width: 600px) {
+    .profileContainer__flex {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .profileContainer__flex > div:first-child,
+    .profileContainer__flex > div:last-child {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+
+    .workHistoryContainer {
+        flex-direction: column;
+    }
+
+    .workHistoryCard {
+        width: 100%;
+        padding-inline: 1.2rem;
+    }
+}
