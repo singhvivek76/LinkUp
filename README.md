@@ -28,7 +28,6 @@ LinkUp/
 |-- .env
 |-- .gitignore
 |-- backend/
-|   |-- api.http
 |   |-- package.json
 |   |-- package-lock.json
 |   |-- server.js
@@ -49,8 +48,6 @@ LinkUp/
 |   `-- node_modules/
 |       `-- backend dependencies
 `-- frontend/
-    |-- AGENTS.md
-    |-- CLAUDE.md
     |-- eslint.config.mjs
     |-- jsconfig.json
     |-- next.config.mjs

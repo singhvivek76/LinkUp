@@ -17,7 +17,6 @@ import { resetPostId } from '@/config/redux/reducer/postReducer'
 
 export default function Dashboard() {
 
-
     const router = useRouter();
 
     const dispatch = useDispatch();
